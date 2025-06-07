@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>varun</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-links">
+            <a href="varun.html" class="active">Home</a>
+            <a href="about.html">About</a>
+        </div>
+        <button id="themeToggle" class="theme-toggle">
+            <span class="light-icon">☀️</span>
+            <span class="dark-icon">🌙</span>
+        </button>
+    </nav>
+    
+    <div class="container">
+        <h1>Hello Varun</h1>
+        <img src="shiva" alt="Shiva Image">
+        <div class="button-group">
+            <button>Press</button>
+            <button onclick="showMessage()">Click</button>
+        </div>
+        <p>This is your web</p>
+        
+        <div class="content-cards">
+            <div class="card">
+                <h2>Welcome</h2>
+                <p>This is a beautiful website with modern design elements including an acrylic navbar and smooth transitions.</p>
+            </div>
+            
+            <div class="card">
+                <h2>Features</h2>
+                <p>Explore the various features including dark/light mode, responsive design, and beautiful animations.</p>
+            </div>
+            
+            <div class="card">
+                <h2>Projects</h2>
+                <p>Check out my latest web development projects and experiments with modern technologies.</p>
+            </div>
+            
+            <div class="card">
+                <h2>Skills</h2>
+                <p>I work with HTML, CSS, JavaScript, and various modern web development frameworks.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showMessage() {
+            alert("wow!");
+        }
+
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        
+        // Check for saved theme preference
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-theme');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            localStorage.setItem('theme', 
+                document.body.classList.contains('dark-theme') ? 'dark' : 'light'
+            );
+        });
+    </script>
+</body>
+</html>
